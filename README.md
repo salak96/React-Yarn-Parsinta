@@ -27,6 +27,7 @@ yarn add axios
 
 # Install Pretiier
 
+-   Install pretiier
 ```bash
 yarn add --dev --exact prettier
 ```
@@ -67,4 +68,15 @@ yarn format
 
 ```bash
 yarn add --dev --exact eslint
+```
+
+# Install bootstrap 5
+
+- bootstrap 5
+```bash
+yarn add bootstrap@next popper.js
+```
+-  Popper.js Installation:
+```bash
+yarn add @popperjs/core
 ```

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
     constructor() {
         super();
@@ -24,7 +25,7 @@ class App extends Component {
         //panggil state user
         const { user } = this.state;
         return (
-            <div>
+            <div className='p-5'>
                 <h1>My name is {user.name}</h1>
                 <h1>My User name is {user.username}</h1>
                 <h1>My email is {user.email}</h1>
