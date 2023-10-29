@@ -19,7 +19,8 @@ yarn
 yarn dev
 ```
 
--   Install axios
+# Install axios
+- Terminal
 
 ```bash
 yarn add axios
@@ -97,3 +98,10 @@ yarn add @popperjs/core
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 ```
+
+# React router dom
+
+-   Install react router dom
+```bash
+yarn add react-router-dom
+``
