@@ -90,3 +90,9 @@ yarn add bootstrap@next popper.js
 ```bash
 yarn add @popperjs/core
 ```
+
+- import bootstrap App.jsx
+```bash
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
