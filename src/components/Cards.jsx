@@ -1,8 +1,6 @@
 import React from 'react';
-
 export default function Post(props) {
     console.log(props);
-
     return (
         <div className='card'>
             <img src={props.content.imageUrl} className='card-img-top' alt='cat' />
