@@ -1,37 +1,34 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import axios from 'axios';
 
+class App extends Component {
+    constructor() {
+        super();
 
-
-class App extends Component{
-    constructor(){
-        super()
-
-        this.state ={
-            user :[]
-        }
+        this.state = {
+            user: [],
+        };
     }
     //axios get user
-    getUser = async () =>{
-        let response = await axios.get("https://jsonplaceholder.typicode.com/users/1");
+    getUser = async () => {
+        let response = await axios.get('https://jsonplaceholder.typicode.com/users/1');
         this.setState({
-            user : response.data
-        })
-    }
+            user: response.data,
+        });
+    };
     //call getUser
-    componentDidMount(){
-        this.getUser()
+    componentDidMount() {
+        this.getUser();
     }
-    render(){
+    render() {
         //panggil state user
-        const {user} = this.state
-        return(
+        const { user } = this.state;
+        return (
             <div>
                 <h1>My name is {user.name}</h1>
                 <h1>My User name is {user.username}</h1>
                 <h1>My email is {user.email}</h1>
             </div>
-
         );
     }
 }
