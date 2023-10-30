@@ -19,16 +19,16 @@ const Banner = () => {
       <button
         className="navbar-toggler"
         type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="flex justify-content-end collapse navbar-collapse " id="navbarSupportedContent">
-        <ul className="navbar-nav mr-auto">
+      <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul className="navbar-nav">
           <li className="nav-item">
             <NavLink exact activeClassName="text-danger" className="nav-link" to="/">
               Home
@@ -45,15 +45,17 @@ const Banner = () => {
             </NavLink>
           </li>
         </ul>
-        <form className="form-inline my-2 my-lg-0">
+        <form className="d-flex">
           <input
-            className="form-control mr-sm-2"
+            className="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
-          />  
+          />
+          <button className="btn btn-warning" type="submit">
+            Search
+          </button>
         </form>
-
       </div>
     </nav>
   );
