@@ -6,7 +6,6 @@ export default function GetUser() {
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(false);
 
-
     const getUser = async () => {
         setLoading(true);
         try {
@@ -28,21 +27,29 @@ export default function GetUser() {
             <div className='container'>
                 <div className='row justify-content-center'>
                     <div className='col-md-8'>
-                        <input type="text" name="indentifier" value={identifier} onChange={(e) => setIdentifier(e.target.value)} placeholder="Enter user" className="form-control" />
-                        {
-                            loading ? <h1>Loading...</h1> :
+                        <input
+                            type='text'
+                            name='indentifier'
+                            value={identifier}
+                            onChange={(e) => setIdentifier(e.target.value)}
+                            placeholder='Enter user'
+                            className='form-control'
+                        />
+                        {loading ? (
+                            <h1>Loading...</h1>
+                        ) : (
                             <div className='table'>
-                            <table className='table table-bordered'>
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Username</th>
-                                        <th>Email</th>
-                                        <th>Website</th>
-                                        <th>Phone</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+                                <table className='table table-bordered'>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Website</th>
+                                            <th>Phone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                         <tr>
                                             <td>{user.name}</td>
                                             <td>{user.username}</td>
@@ -50,12 +57,10 @@ export default function GetUser() {
                                             <td>{user.website}</td>
                                             <td>{user.phone}</td>
                                         </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                        }
-                     
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

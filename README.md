@@ -20,7 +20,8 @@ yarn dev
 ```
 
 # Install axios
-- Terminal
+
+-   Terminal
 
 ```bash
 yarn add axios
@@ -102,6 +103,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 # React router dom
 
 -   Install react router dom
+
 ```bash
 yarn add react-router-dom
 ```
