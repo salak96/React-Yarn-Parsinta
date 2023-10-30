@@ -30,17 +30,17 @@ const Banner = () => {
       <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink exact activeClassName="text-danger" className="nav-link" to="/">
+            <NavLink   className="nav-link" to="/">
               Home
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink activeClassName="text-danger" className="nav-link" to="/about">
+            <NavLink  className="nav-link" to="/about">
               About
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink activeClassName="text-danger" className="nav-link" to="/dashboard">
+            <NavLink  className="nav-link" to="/dashboard">
               Dashboard
             </NavLink>
           </li>

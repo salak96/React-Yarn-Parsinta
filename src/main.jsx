@@ -7,6 +7,7 @@ import Home from './components/views/Home.jsx';
 import About from './components/views/About.jsx';
 import Dashboard from './components/views/Dashboard.jsx';
 import BannerLayout from './layouts/BannerLayout.jsx';
+import NotFound from './components/views/errors/NotFound.jsx';
 
 const router = createBrowserRouter([
     {
@@ -25,11 +26,17 @@ const router = createBrowserRouter([
                 path: 'dashboard',
                 element: <Dashboard />,
             },
+           
         ],
+    },
+    {
+        path: '*',
+        element: <NotFound />,
     },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <RouterProvider router={router} />
+
     </React.StrictMode>,
 );
