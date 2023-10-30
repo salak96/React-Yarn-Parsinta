@@ -3,7 +3,7 @@ import Banner from '../components/views/Banner';
 
 const BannerLayout = () => {
     return (
-        <div>
+        <div className='py-20'>
             <Banner />
             <Outlet />
         </div>

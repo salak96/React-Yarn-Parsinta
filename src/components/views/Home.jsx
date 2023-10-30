@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div style={styles.container}>
-            <h1>Hello Progate</h1>
+            <h1>Hello World !</h1>
             <div>
                 <Link to='about'>About</Link>
             </div>
