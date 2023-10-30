@@ -1,26 +1,15 @@
-import { Link } from 'react-router-dom';
+import FormFunction from '../FormFunction';
+
 
 const Home = () => {
     return (
-        <div style={styles.container}>
-            <h1>Hello World !</h1>
-            <div>
-                <Link to='about'>About</Link>
-            </div>
-            <div>
-                <Link to='dashboard'>Dashboard</Link>
-            </div>
+        <div className='container py-5 text-center'>
+            <h1>Hello World!</h1>
+            <h2>Add your name</h2>
+            <FormFunction />
+          
         </div>
     );
-};
-
-const styles = {
-    container: {
-        padding: '40px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
 };
 
 export default Home;

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 export default function FormFunction() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -10,11 +11,10 @@ export default function FormFunction() {
         setFirstName('');
         setLastName('');
     };
-
     return (
-        <div className='p-5'>
-            <div className='container'>
-                <div className='row'>
+        <div className='py-5'>
+        <div className='container'>
+            <div className='row justify-content-center'>
                     <div className='col-md-10'>
                         <div className='card'>
                             <div className='card-header'>Learn REACT JS</div>
