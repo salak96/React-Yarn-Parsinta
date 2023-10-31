@@ -10,7 +10,7 @@ export default function Show() {
         let response = await axios.get(`https://jsonplaceholder.typicode.com/users/${identifier}`);
         setUsers(response.data);
     };
-    
+
     useEffect(() => {
         getUser();
     }, [identifier]);
@@ -19,9 +19,7 @@ export default function Show() {
         <div className='container py-5 mt-10'>
             {user ? (
                 <div className='card'>
-                    <div className='card-header juustify-content-center align-items-center text-center'>
-                        {user.name}
-                    </div>
+                    <div className='card-header juustify-content-center align-items-center text-center'>{user.name}</div>
                     <div className='card-body'>
                         <div className='justify-content-center text-center align-items-center py-5'>
                             <a href={`https://www.${user.website}`} target='_blank' className='text-decoration-none d-block mb-2'>
@@ -30,7 +28,6 @@ export default function Show() {
                             <p>{user.name}</p>
                             <p>{user.email}</p>
                         </div>
-                     
                     </div>
                 </div>
             ) : (
