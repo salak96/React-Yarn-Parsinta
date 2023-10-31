@@ -1,20 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { UserProvider } from '../views/context/User';
+import AuthenticatedUser from '../AuthenticatedUser';
 
 const Banner = () => {
     return (
         <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-            <div className='ml-auto'>
-                <img
+            <div className='container-fluid-collapse'>
+                <img 
                     src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'
                     width='30'
-                    height='30'
-                    className='d-inline-block align-top'
-                    alt=''
+                    height='40'
+                    className='navbar-brand m-2'
+                    alt='foto'
                 />
             </div>
-            <NavLink className='navbar-brand' to='/'>
-                Your App
+            <NavLink className='navbar-brand mt-1' to='/'>
+                <UserProvider>
+                    <AuthenticatedUser />
+                </UserProvider>
             </NavLink>
             <button
                 className='navbar-toggler'
@@ -28,7 +32,7 @@ const Banner = () => {
                 <span className='navbar-toggler-icon'></span>
             </button>
             <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
-                <ul className='navbar-nav'>
+                <ul className='navbar-nav m-2'>
                     <li className='nav-item'>
                         <NavLink className='nav-link' to='/dashboard'>
                             Dashboard
@@ -50,12 +54,6 @@ const Banner = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <form className='d-flex'>
-                    <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
-                    <button className='btn btn-warning' type='submit'>
-                        Search
-                    </button>
-                </form>
             </div>
         </nav>
     );
