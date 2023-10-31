@@ -24,14 +24,15 @@ export default function Index() {
                 {users.map((user, index) => {
                     return (
                         <div className='col-md-4' key={index}>
-                            <div className='card'>
-                                <div className='card-header'>{user.name}</div>
-                                <div className='card-body'>
+                            <div className='card m-2'>
+                                <div className='card-header text-center'>{user.name}</div>
+                                <div className='card-body gap-3 text-center'>
                                     <div className='mb-4'>
                                         <a href={`https://www.${user.website}`} target='_blank' className='text-decoration-none d-block mb-2'>
                                             {user.website}
                                         </a>
                                         <p>{user.name}</p>
+                                        <p>{user.address.street}</p>
                                     </div>
                                     <NavLink to={`/users/${user.id}`} className='btn btn-primary'>
                                         View Profile
