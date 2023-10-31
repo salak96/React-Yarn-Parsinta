@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { authUser } from './store';
 import { useRecoilValue } from 'recoil';
-import { UserProvider } from './context/User';
-import AuthenticatedUser from '../AuthenticatedUser';
+
 const Banner = () => {
     const user = useRecoilValue(authUser);
     return (
@@ -18,19 +17,8 @@ const Banner = () => {
                 />
             </div>
              <NavLink className='navbar-brand' to='/'>
-                     {user && user.username}
+                     {user.username}
             </NavLink>
-            <button
-                className='navbar-toggler'
-                type='button'
-                data-bs-toggle='collapse'
-                data-bs-target='#navbarSupportedContent'
-                aria-controls='navbarSupportedContent'
-                aria-expanded='false'
-                aria-label='Toggle navigation'
-            >
-                <span className='navbar-toggler-icon'></span>
-            </button>
             <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
                 <ul className='navbar-nav m-2'>
                     <li className='nav-item'>
