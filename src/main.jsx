@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +11,7 @@ import NotFound from './components/views/errors/NotFound.jsx';
 import Login from './components/views/auth/Login.jsx';
 import Users from './components/views/users/Index.jsx';
 import UserShow from './components/views/users/Show.jsx';
+import RecoilRoot from 'recoil';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
+      <RecoilRoot>
+        <Suspense fallback={<div>Loading...</div>}>
         <RouterProvider router={router} />
+        </Suspense>
+      </RecoilRoot>
     </React.StrictMode>,
 );

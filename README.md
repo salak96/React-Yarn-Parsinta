@@ -107,3 +107,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 ```bash
 yarn add react-router-dom
 ```
+
+# State Managejemen Recoil
+
+- Install recoil yarn
+
+```bash
+yarn add recoil
+```
