@@ -13,8 +13,8 @@ export default function FormFunction() {
     };
     return (
         <div className='py-5'>
-        <div className='container'>
-            <div className='row justify-content-center'>
+            <div className='container'>
+                <div className='row justify-content-center'>
                     <div className='col-md-10'>
                         <div className='card'>
                             <div className='card-header'>Learn REACT JS</div>
