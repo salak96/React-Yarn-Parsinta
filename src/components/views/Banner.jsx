@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { authUser } from './store';
-
+import { useRecoilValue } from 'recoil';
+import { UserProvider } from './context/User';
+import AuthenticatedUser from '../AuthenticatedUser';
 const Banner = () => {
     const user = useRecoilValue(authUser);
     return (
@@ -15,11 +17,9 @@ const Banner = () => {
                     alt='foto'
                 />
             </div>
-            {/* <NavLink className='navbar-brand mt-1' to='/'>
-                <UserProvider>
-                    <AuthenticatedUser />
-                </UserProvider>
-            </NavLink> */}
+             <NavLink className='navbar-brand' to='/'>
+                     {user && user.username}
+            </NavLink>
             <button
                 className='navbar-toggler'
                 type='button'
@@ -54,10 +54,10 @@ const Banner = () => {
                         </NavLink>
                     </li>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to='/'>
-                           {user.username}
+                        <NavLink className='nav-link' to='/login'>
+                            Login
                         </NavLink>
-                    </li>
+                </li>
                 </ul>
             </div>
         </nav>
