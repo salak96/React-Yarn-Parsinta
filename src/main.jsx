@@ -8,7 +8,7 @@ import About from './components/views/About.jsx';
 import Dashboard from './components/views/Dashboard.jsx';
 import BannerLayout from './layouts/BannerLayout.jsx';
 import NotFound from './components/views/errors/NotFound.jsx';
-
+import Login from './components/views/auth/Login.jsx';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -28,6 +28,10 @@ const router = createBrowserRouter([
             },
            
         ],
+    },
+    {
+        path: '/login',
+        element: <Login />,
     },
     {
         path: '*',
