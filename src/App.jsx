@@ -9,6 +9,7 @@ import Users from './components/views/users/Index.jsx';
 import UserShow from './components/views/users/Show.jsx';
 import { RecoilRoot } from 'recoil'; // Ditambahkan
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import * as Middleware from './middleware/App.jsx';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -18,10 +19,7 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
             },
-            {
-                path: 'dashboard',
-                element: <Dashboard />,
-            },
+        
             {
                 path: 'about',
                 element: <About />,
@@ -37,6 +35,13 @@ const router = createBrowserRouter([
         ],
     },
     {
+        path: '/dashboard',
+        element: 
+        <Middleware.Authenticated render={
+            <Login />
+        }/>
+    },
+    {
         path: '/login',
         element: <Login />,
     },
@@ -49,6 +54,7 @@ const router = createBrowserRouter([
         path: '*',
         element: <NotFound />,
     },
+    
 ]);
 
 function App() {
