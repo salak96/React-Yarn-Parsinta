@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import Banner from '../components/views/Banner';
+import Banner from '../components/views/Navbar';
 
 const BannerLayout = () => {
     return (

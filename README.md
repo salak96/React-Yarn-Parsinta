@@ -110,7 +110,7 @@ yarn add react-router-dom
 
 # State Managejemen Recoil
 
-- Install recoil yarn
+-   Install recoil yarn
 
 ```bash
 yarn add recoil

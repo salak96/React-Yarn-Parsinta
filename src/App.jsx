@@ -4,6 +4,7 @@ import Dashboard from './components/views/Dashboard.jsx';
 import BannerLayout from './layouts/BannerLayout.jsx';
 import NotFound from './components/views/errors/NotFound.jsx';
 import Login from './components/views/auth/Login.jsx';
+import Register from './components/views/auth/Register.jsx';
 import Users from './components/views/users/Index.jsx';
 import UserShow from './components/views/users/Show.jsx';
 import { RecoilRoot } from 'recoil'; // Ditambahkan
@@ -18,12 +19,12 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: 'about',
-                element: <About />,
-            },
-            {
                 path: 'dashboard',
                 element: <Dashboard />,
+            },
+            {
+                path: 'about',
+                element: <About />,
             },
             {
                 path: '/users',
@@ -40,12 +41,17 @@ const router = createBrowserRouter([
         element: <Login />,
     },
     {
+        path: '/register',
+        element: <Register />,
+    },
+
+    {
         path: '*',
         element: <NotFound />,
     },
 ]);
 
-function App(){
+function App() {
     return (
         <RecoilRoot>
             <RouterProvider router={router} />
