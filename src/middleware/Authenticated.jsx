@@ -7,9 +7,9 @@ export default function Authenticated(props) {
     const navigate = redirect();
     const auth = useRecoilValue(authenticated);
     useEffect(() => {
-        if(!auth){
+        if (!auth) {
             navigate('/');
         }
-    },[])
-    return props.render
+    }, []);
+    return props.render;
 }

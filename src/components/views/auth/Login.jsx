@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loggedIn, setLoggedIn] = useState(false);
 
-    const handleLogin = () => {
-        // Simulasikan logika login, contoh: jika login berhasil, arahkan ke '/dashboard'
-        if (email === 'contoh@email.com' && password === 'password') {
-            <NavLink to='/' />;
-        }
+    const handleLogin = (event) => {
+        event.preventDefault();
+        localStorage.getItem(loggedIn); 
+        setLoggedIn(true); 
+        window.location.href = '/';
     };
+
+
+    useEffect(() => {
+        setLoggedIn(localStorage.getItem('loggedIn'));
+    }, []);
 
     return (
         <div className='container'>
@@ -18,36 +24,23 @@ const Login = () => {
                 <div className='col-md-4'>
                     <div className='border p-4 rounded bg-light'>
                         <h2 className='text-center mb-4'>Login</h2>
-                        <form>
+                        <form onSubmit={handleLogin}>
+                            <label>Username:</label>
+                            <input type='text' className='form-control' value={username} onChange={(e) => setUsername(e.target.value)} />
                             <div className='form-group'>
-                                <label htmlFor='email'>Email</label>
-                                <input
-                                    type='email'
-                                    className='form-control mt-2 mb-3'
-                                    id='email'
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder='Enter email'
-                                />
+                                <label>Password:</label>
+                                <input type='password' className='form-control' value={password} onChange={(e) => setPassword(e.target.value)} />
                             </div>
-                            <div className='form-group'>
-                                <label htmlFor='password'>Password</label>
-                                <input
-                                    type='password'
-                                    className='form-control mt-2'
-                                    id='password'
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder='Enter password'
-                                />
-                            </div>
-                            <div className="d-grid">
-                            <button type='button' className='btn btn-primary btn-block mt-4' onClick={handleLogin}>
-                                Login
-                            </button>
-                            <button type='button' className='btn btn-danger btn-block mt-4' >
-                               <a className='text-decoration-none text-light' href='/register'>Register</a>
-                            </button>
+                            <div className='d-grid'>
+                                <button type='submit' className='btn btn-primary btn-block mt-4'>
+                                    Login
+                                </button>
+                                {loggedIn === true ? <p className='text-success mt-1'>You are now logged in.</p> : <p className='text-danger mt-1'>Login failed.</p>}
+                                <button type='button' className='btn btn-danger btn-block'>
+                                    <NavLink className={'text-decoration-none text-light'} to='/register'>
+                                        Register
+                                    </NavLink>
+                                </button>
                             </div>
                         </form>
                     </div>

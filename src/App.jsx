@@ -15,38 +15,23 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
             },
-          
         ],
     },
     {
         path: '/dashboard',
-        element: 
-        <Middleware.Authenticated render={
-            <Login />
-        }/>,
+        element: <Middleware.Authenticated render={<Login />} />,
     },
     {
         path: '/users',
-        element: 
-        <Middleware.Authenticated render={
-            <Login />
-        }/>,
+        element: <Middleware.Authenticated render={<Login />} />,
     },
     {
         path: '/users/:id',
-        element: 
-        <Middleware.Authenticated render={
-            <Login />
-        }/>,
-
+        element: <Middleware.Authenticated render={<Login />} />,
     },
     {
         path: '/about',
-        element: 
-        <Middleware.Authenticated render={
-            <Login />
-        }/>,
-
+        element: <Middleware.Authenticated render={<Login />} />,
     },
     {
         path: '/login',
@@ -61,7 +46,6 @@ const router = createBrowserRouter([
         path: '*',
         element: <NotFound />,
     },
-    
 ]);
 
 function App() {
