@@ -1,73 +1,63 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({ username: '', email: '', password: '' });
 
-    const handleLogin = () => {
-        // Simulasikan logika login, contoh: jika login berhasil, arahkan ke '/dashboard'
-        if (email === 'contoh@email.com' && password === 'password') {
-            <NavLink to='/' />;
-        }
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
 
-    return (
-        <div className='container'>
-            <div className='row justify-content-center align-items-center vh-100'>
-                <div className='col-md-4'>
-                    <div className='border p-4 rounded'>
-                        <div className='text-center'>
-                            Go to <NavLink to='/'>Home</NavLink>
-                        </div>
-                        <h2 className='text-center mb-4'>Register</h2>
-                        <form>
-                            <div className='form-group'>
-                                <label htmlFor='name'>Name</label>
-                                <input type='Name' className='form-control' id='Name' placeholder='Enter Username' />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='email'>Email</label>
-                                <input
-                                    type='email'
-                                    className='form-control'
-                                    id='email'
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder='Enter email'
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='password'>Password</label>
-                                <input
-                                    type='password'
-                                    className='form-control'
-                                    id='password'
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder='Enter password'
-                                />
-                            </div>
-                            <div className='form-group'>
-                                <label htmlFor='password'>Confirm Password</label>
-                                <input
-                                    type='password'
-                                    className='form-control'
-                                    id='password'
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder='Enter password'
-                                />
-                            </div>
-                            <button type='button' className='btn btn-primary btn-block mt-4 text-center justify-content-center' onClick={handleLogin}>
-                                Register
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simpan data pengguna ke localStorage
+    localStorage.setItem(formData.username, JSON.stringify(formData));
+    // Anda dapat menambahkan validasi atau logika lain di sini
+  };
+
+  return (
+    <div className="container">
+      <h2>Register</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            name="username"
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange}
+            className="form-control"
+          />
         </div>
-    );
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="form-control"
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Register
+        </button>
+      </form>
+    </div>
+  );
 };
 
 export default Register;
