@@ -7,12 +7,16 @@ const Navbar = () => {
     const auth = useRecoilValue(authenticated);
     return (
         <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-            <div className='container-fluid-collapse'>
+            <div className='container-fluid-collapse navbar-brand justify-content-center text-center'>
                 <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' width='30' height='40' className='navbar-brand m-2' alt='foto' />
             </div>
-            <NavLink className='navbar-brand' to='/'>
-                <h6 className='text-light mt-1'>{auth.user.name}</h6>
+            <NavLink className='navbar-brand mt-2 justify-content-center text-center' to='/'>
+                <h6 className='text-light'>{auth.user.name}</h6>
             </NavLink>
+            {/* toggle */}
+            <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                <span className='navbar-toggler-icon'></span>
+            </button>
             <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
                 <ul className='navbar-nav m-2'>
                     <li className='nav-item'>
@@ -36,12 +40,12 @@ const Navbar = () => {
                         </NavLink>
                     </li>
                 </ul>
-                <div className='containercollapse navbar-collapse justify-content-end'>
+                <div className='container collapse navbar-collapse justify-content-end mt-2'>
                     {auth.check ? (
                         <ul className='navbar-nav m-2'>
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/login'>
-                                    <h5 className='text-light'>{auth.user.name}</h5>
+                                    <h6 className='text-light'>{auth.user.name}</h6>
                                 </NavLink>
                             </li>
                         </ul>
@@ -49,12 +53,12 @@ const Navbar = () => {
                         <ul className='navbar-nav m-2'>
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/login'>
-                                    <h5 className='text-light'>Login</h5>
+                                    <h6 className='text-light'>Login</h6>
                                 </NavLink>
                             </li>
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/register'>
-                                    <h5 className='text-light '>Register</h5>
+                                    <h6 className='text-light '>Register</h6>
                                 </NavLink>
                             </li>
                         </ul>
