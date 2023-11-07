@@ -19,7 +19,9 @@ yarn
 yarn dev
 ```
 
--   Install axios
+# Install axios
+
+-   Terminal
 
 ```bash
 yarn add axios
@@ -28,10 +30,13 @@ yarn add axios
 # Install Pretiier
 
 -   Install pretiier
+
 ```bash
 yarn add --dev --exact prettier
 ```
-- Edit package json
+
+-   Edit package json
+
 ```bash
  "scripts": {
     "dev": "vite",
@@ -41,11 +46,15 @@ yarn add --dev --exact prettier
     "format": "prettier --write ." #add this pretiier
   },
 ```
--  Add pretiier
+
+-   Add pretiier
+
 ```bash
 touch .prettierrc.json
 ```
+
 -   Edit .prettierrc.json
+
 ```bash
 {
     "tabWidth": 4,
@@ -72,11 +81,37 @@ yarn add --dev --exact eslint
 
 # Install bootstrap 5
 
-- bootstrap 5
+-   bootstrap 5
+
 ```bash
 yarn add bootstrap@next popper.js
 ```
--  Popper.js Installation:
+
+-   Popper.js Installation:
+
 ```bash
 yarn add @popperjs/core
+```
+
+-   import bootstrap App.jsx
+
+```bash
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+# React router dom
+
+-   Install react router dom
+
+```bash
+yarn add react-router-dom
+```
+
+# State Managejemen Recoil
+
+-   Install recoil yarn
+
+```bash
+yarn add recoil
 ```
