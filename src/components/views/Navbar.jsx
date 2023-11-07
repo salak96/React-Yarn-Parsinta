@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 import { authenticated } from './store/authenticade';
+import Logout from './auth/Logout';
 
 const Navbar = () => {
     const auth = useRecoilValue(authenticated);
@@ -61,12 +62,12 @@ const Navbar = () => {
                         <ul className='navbar-nav m-2'>
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/login'>
-                                    <h6 className='text-light'>Login</h6>
+                                    <h6 className='text-light mt-2'>Login</h6>
                                 </NavLink>
                             </li>
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/register'>
-                                    <h6 className='text-light '>Register</h6>
+                                    <h6 className='text-light mt-2'>Register</h6>
                                 </NavLink>
                             </li>
                         </ul>

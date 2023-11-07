@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { redirect } from 'react-router-dom';
 
 export default function Guest(props) {
-    const navigate = redirect();
+    
     const auth = useRecoilValue(authenticated);
     useEffect(() => {
         if (auth) {
-            navigate('/dashboard');
+            redirect('/dashboard');
         }
     }, []);
     return props.render;

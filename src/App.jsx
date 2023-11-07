@@ -6,6 +6,7 @@ import Register from './components/views/auth/Register.jsx';
 import { RecoilRoot } from 'recoil'; // Ditambahkan
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import * as Middleware from './middleware/App.jsx';
+import Dasbhoard from './components/views/Dashboard.jsx';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -15,31 +16,34 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home />,
             },
+            {
+                path: '/dashboard',
+                element: <Dasbhoard />,
+            },
+          
         ],
     },
     {
-        path: '/dashboard',
-        element: <Middleware.Authenticated render={<Login />} />,
+        path : '/about',
+        element: <Middleware.Authenticated render={
+            <Login />
+        } />,
     },
     {
         path: '/users',
-        element: <Middleware.Authenticated render={<Login />} />,
-    },
-    {
-        path: '/users/:id',
-        element: <Middleware.Authenticated render={<Login />} />,
-    },
-    {
-        path: '/about',
-        element: <Middleware.Authenticated render={<Login />} />,
+        element: <Middleware.Authenticated render={
+            <Login />
+        } />,
     },
     {
         path: '/login',
-        element: <Login />,
+        element: <Middleware.Guest render={
+            <Middleware.Guest render={<Login />} />
+        } />,
     },
     {
         path: '/register',
-        element: <Register />,
+        element:<Register/>
     },
 
     {

@@ -4,12 +4,11 @@ import { useEffect } from 'react';
 import { redirect } from 'react-router-dom';
 
 export default function Authenticated(props) {
-    const navigate = redirect();
+    
     const auth = useRecoilValue(authenticated);
     useEffect(() => {
         if (!auth) {
-            navigate('/');
-        }
+            redirect('/login');}
     }, []);
     return props.render;
 }
