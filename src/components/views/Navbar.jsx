@@ -29,9 +29,11 @@ const Navbar = () => {
             <div className='collapse navbar-collapse justify-content-end' id='navbarSupportedContent'>
                 <ul className='navbar-nav m-2'>
                     <li className='nav-item'>
-                        <NavLink className='nav-link' to='/dashboard'>
-                            Dashboard
-                        </NavLink>
+                        {auth.check && (
+                            <NavLink className='nav-link' to='/dashboard'>
+                                Dashboard
+                            </NavLink>
+                        )}
                     </li>
                     <li className='nav-item'>
                         <NavLink className='nav-link' to='/'>

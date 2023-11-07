@@ -19,8 +19,7 @@ const Register = () => {
         // Reset form
         setFormData({ username: '', email: '', password: '' });
         // Redirect
-        if(formData.username && formData.email && formData.password)
-        {
+        if (formData.username && formData.email && formData.password) {
             window.location.href = '/login';
         }
     };
