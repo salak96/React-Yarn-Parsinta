@@ -4,60 +4,27 @@ import NotFound from './components/views/errors/NotFound.jsx';
 import Login from './components/views/auth/Login.jsx';
 import Register from './components/views/auth/Register.jsx';
 import { RecoilRoot } from 'recoil'; // Ditambahkan
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import * as Middleware from './middleware/App.jsx';
+import { RouterProvider, createBrowserRouter, useNavigate, redirect,useRoutes, Navigate  } from 'react-router-dom';
 import Dasbhoard from './components/views/Dashboard.jsx';
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <BannerLayout />,
-        children: [
-            {
-                path: '/',
-                element: <Home />,
-            },
-            {
-                path: '/dashboard',
-                element: <Dasbhoard />,
-            },
-          
-        ],
-    },
-    {
-        path : '/about',
-        element: <Middleware.Authenticated render={
-            <Login />
-        } />,
-    },
-    {
-        path: '/users',
-        element: <Middleware.Authenticated render={
-            <Login />
-        } />,
-    },
-    {
-        path: '/login',
-        element: <Middleware.Guest render={
-            <Middleware.Guest render={<Login />} />
-        } />,
-    },
-    {
-        path: '/register',
-        element:<Register/>
-    },
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoutes from './middleware/ProtectedPages.jsx';
 
-    {
-        path: '*',
-        element: <NotFound />,
-    },
-]);
-
-function App() {
-    return (
-        <RecoilRoot>
-            <RouterProvider router={router} />
-        </RecoilRoot>
-    );
+const Homepages = () => {
+    return (<h1> LOGIN DLU WOI</h1>)
 }
 
-export default App;
+export default function PendaftaranPages (){
+    let auth = localStorage.getItem('auth');
+    return (
+        <RecoilRoot>
+        <Routes>
+            <Route element={<ProtectedRoutes/>} />
+            <Route path='/' element={<Homepages />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/dashboard' element={<ProtectedRoutes Pages={BannerLayout}/>} />
+            
+        </Routes>
+        </RecoilRoot>
+    )
+}

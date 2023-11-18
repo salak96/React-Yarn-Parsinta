@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Simpan data pengguna ke localStorage
-        localStorage.setItem(formData.username, JSON.stringify(formData));
+        localStorage.setItem('userData', JSON.stringify(formData));
         // Reset form
         setFormData({ username: '', email: '', password: '' });
         // Redirect
