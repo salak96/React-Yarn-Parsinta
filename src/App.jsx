@@ -14,6 +14,17 @@ const Homepages = () => {
 }
 
 export default function PendaftaranPages (){
+    let auth = localStorage.getItem('auth');
+if(auth){
+    return(
+        <RecoilRoot>
+        <Routes>
+
+        <Route path='/dashboard' element={<BannerLayout/>} /> 
+        </Routes>
+        </RecoilRoot>
+    )
+}else{
     return (
         <RecoilRoot>
         <Routes>
@@ -25,4 +36,5 @@ export default function PendaftaranPages (){
         </Routes>
         </RecoilRoot>
     )
+}
 }
