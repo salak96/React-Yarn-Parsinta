@@ -14,11 +14,9 @@ const Homepages = () => {
 }
 
 export default function PendaftaranPages (){
-    let auth = localStorage.getItem('auth');
     return (
         <RecoilRoot>
         <Routes>
-            <Route element={<ProtectedRoutes/>} />
             <Route path='/' element={<Homepages />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
